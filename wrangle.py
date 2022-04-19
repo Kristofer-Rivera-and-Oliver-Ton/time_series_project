@@ -4,7 +4,6 @@ warnings.filterwarnings("ignore")
 
 # visualize 
 import matplotlib.pyplot as plt
-%matplotlib inline
 import seaborn as sns
 from scipy import stats
 
@@ -32,7 +31,8 @@ def new_superstore_data():
     select * from orders 
     join customers using (`Customer ID`)
     join products using(`Product ID`)
-    left join categories using (`Category ID`);
+    join categories using (`Category ID`)
+    join regions using (`Region ID`);
     '''
     df = pd.read_sql(sql_query, get_connection('superstore_db'))
     return df 
@@ -46,31 +46,35 @@ def get_superstore_data():
         df.to_csv('superstore.csv')
     return df
 
-def date_to_index (df, col_date):
+def date_to_index (df, col_date1, col_date2):
     '''
     takes in a df and a name of the column that is a order date. 
     return a df with the selected column in datetime format  as Index 
     '''
     #convert sale_date to datetime format
-    df[col_date]= pd.to_datetime(df[col_date])
+    df[col_date1]= pd.to_datetime(df[col_date1])
+    df[col_date2]= pd.to_datetime(df[col_date2])
     #set date as index
-    df = df.set_index(col_date).sort_index()
+    df = df.set_index(col_date1).sort_index()
     return df
 
-def prep_sales (df, col_date):
+def prep_superstore (df, col_date1, col_date2):
     '''
-    takes in a df and the name of the column (order date),
-    return df  with the selected column in datetime format  as Index, new columns:
-    month, year
+    This function will takes in a df and the name of the column (order date).
+    Renaming columns, dropping foreign keys and converting data type with the selected column in datetime format as Index, new columns:
+    month, year and return dataframe.
+    
     '''
-    
-    #set date to index
-    df = date_to_index (df, col_date)
-    
+    #Using function date_to_index
+    df = date_to_index (df, col_date1, col_date2)
+
+    #Converts column names to lower case and changes spaces to underscores
+    df.columns = [col.lower().replace(" ","_").replace("-","_") for col in df.columns]
+
     #create new columns
     df['month'] = df.index.month_name()
     df['year' ] = df.index.year
-    #drop a column
-    #df = df.drop(columns ='Unnamed: 0')
 
+    # Drop unnecessary foreign keys
+    df = df.drop(columns = ['region_id','category_id'])
     return df
