@@ -2,11 +2,6 @@
 import warnings
 warnings.filterwarnings("ignore")
 
-# visualize 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy import stats
-
 # working with dates
 from datetime import datetime
 
@@ -65,9 +60,8 @@ def date_to_index (df, col_date1, col_date2):
 def prep_superstore (df, col_date1, col_date2):
     '''
     This function will takes in a df and the name of the column (order date).
-    Renaming columns, dropping foreign keys and converting data type with the selected column in datetime format as Index, new columns:
-    month, year and return dataframe.
-    
+    Renaming columns, dropping foreign keys and 
+    converting data type with the selected column in datetime format as Index, and return dataframe.
     '''
     #Using function date_to_index
     df = date_to_index (df, col_date1, col_date2)
@@ -75,12 +69,8 @@ def prep_superstore (df, col_date1, col_date2):
     #Converts column names to lower case and changes spaces to underscores
     df.columns = [col.lower().replace(" ","_").replace("-","_") for col in df.columns]
 
-    #create new columns
-    df['month'] = df.index.month_name()
-    df['year' ] = df.index.year
-
     # Drop unnecessary foreign keys
-    df = df.drop(columns = ['region_id','category_id'])
+    df = df.drop(columns = ['region_id','product_id','customer_id','category_id','order_id'])
     return df
 
 # create a function that splits data
