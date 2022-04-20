@@ -16,6 +16,8 @@ import pandas as pd
 import numpy as np
 import os
 
+#*********ACQUIRE************
+
 #acquire data for the first time
 def get_connection(db):
     '''
@@ -45,6 +47,8 @@ def get_superstore_data():
         df = new_superstore_data()
         df.to_csv('superstore.csv')
     return df
+
+#*********PREPARE************
 
 def date_to_index (df, col_date1, col_date2):
     '''
@@ -78,3 +82,20 @@ def prep_superstore (df, col_date1, col_date2):
     # Drop unnecessary foreign keys
     df = df.drop(columns = ['region_id','category_id'])
     return df
+
+# create a function that splits data
+def split_time_series_data(df):
+    '''
+    This function takes in a dataframe, does a 50/30/20 split, and returns three dataframes for training, validating, and testing
+    '''
+    train_size = int(len(df) * .5)
+    validate_size = int(len(df) * .3)
+    test_size = int(len(df) - train_size - validate_size)
+    validate_end_index = train_size + validate_size
+
+    # split into train, validation, test
+    train = df[: train_size]
+    validate = df[train_size : validate_end_index]
+    test = df[validate_end_index : ]
+    
+    return train, validate, test
