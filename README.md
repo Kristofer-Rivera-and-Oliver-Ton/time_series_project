@@ -29,7 +29,7 @@ Table of Contents
  
  
 #### 1.  GOAL:
-The goal of this project is to identify which category is the best for SuperStore, a office-supply retail store, and make recommendations on where to shift company focus in regards to category. 
+The goal of this project is to identify which product category should we expand on for SuperStore, a office-supply retail store, and make recommendations on where to shift company focus in regards to product category. 
  
  
 #### 2. DESCRIPTION:
