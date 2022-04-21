@@ -71,6 +71,7 @@ def prep_superstore (df, col_date1, col_date2):
 
     #Create month column
     df['month'] = df.index.month_name()
+    df['year'] = df.index.year 
     
     # Drop unnecessary foreign keys
     df = df.drop(columns = ['region_id','product_id','customer_id','category_id','order_id'])
