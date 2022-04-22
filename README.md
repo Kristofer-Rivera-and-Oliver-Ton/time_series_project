@@ -34,7 +34,7 @@ The goal of this project is to provide the SuperStore VP of Product with a data-
  
 #### 2. DESCRIPTION:
 Superstore's mission is to be the preferred supplier of workspace solutions; from home-office to cooperate office, we aspire to be the leading expert in workplace solutions for everyone! For this reason, it is important to know whether we are reaching everyone with our products and services. 
-This project will use exploratory analysis, time-series analysis and modeling to identify the best product category for Superstore to expand on. Based on sales and profitability, we will provide recommendations on where to shift our company focus in order to maintain happy loyal customers while continuing to grow our customer base.
+This project will use exploratory analysis, time-series analysis and model forecasting to identify the best product category for Superstore to expand on. Based on sales and profitability, we will provide recommendations on where to shift our company focus in order to maintain happy loyal customers while continuing to grow our customer base.
  
 
 #### 3.INITIAL QUESTIONS:
