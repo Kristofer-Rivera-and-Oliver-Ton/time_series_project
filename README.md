@@ -40,7 +40,7 @@ This project will use exploratory analysis, time-series analysis and modeling to
 #### 3.INITIAL QUESTIONS:
 The focus of the project is identifying the best product category to expand on. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
-##### Data-Focused Questions
+#### Data-Focused Questions
 1. Which product category is the most profitable?
 
 2. Is there a category that stands out in terms of sales volume?
@@ -54,7 +54,7 @@ The focus of the project is identifying the best product category to expand on. 
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
 - [x] Report Jupyter Notebook - provides final presentation-ready wrangle, exploration and modeling
-- [x] Slide Deck - 5-minute presentation to stakeholders
+- [x] Slide Deck - 5-minute presentation to stakeholders (VP of Product)
  
  
 ## II. PROJECT DATA CONTEXT
@@ -137,7 +137,6 @@ Using Jupyter Notebook:
  
 #### 5. MODEL & EVALUATE
 Using Jupyter Notebook:
-- [x]  Establish baseline accuracy
 - [x]  Train and fit multiple models with varying algorithms and/or hyperparameters
 - [x]  Remove unnecessary features
 - [x]  Evaluate best performing models using validate set
@@ -164,6 +163,7 @@ Using Jupyter Notebook:
 
 ## IV. PROJECT MODULES:
 - [x] wrangle.py - provides reproducible python code to automate acquiring, preparing, and splitting the data
+- [x] model.py - provides reproducible python code to automate create prophet machine learning algorithm
  
   
 ## V. PROJECT REPRODUCTION:
@@ -171,7 +171,7 @@ Using Jupyter Notebook:
  - [x] You will need an env.py file that contains the hostname, username, and password of the database that contains the superstore_db dataset
 - [x] Store that env file locally in the repository
 - [x] Make .gitignore and confirm .gitignore is hiding your env.py file
-- [x] Clone our repo (including the wrangle.py)
+- [x] Clone our repo (including the wrangle.py, model.py)
 - [x] Import python libraries:  pandas, matplotlib, seaborn, numpy, and prophet
 - [x] Follow steps as outlined in the README.md. and draft notebooks
 - [x] Run Final_Report.ipynb to view the final product
