@@ -29,22 +29,25 @@ Table of Contents
  
  
 #### 1.  GOAL:
-The goal of this project is to identify which product category should we expand on for SuperStore, a office-supply retail store, and make recommendations on where to shift company focus in regards to product category. 
+The goal of this project is to provide the SuperStore VP of Product with a data-backed recommendation for which product line to expand on.  
  
  
 #### 2. DESCRIPTION:
 Superstore's mission is to be the preferred supplier of workspace solutions; from home-office to cooperate office, we aspire to be the leading expert in workplace solutions for everyone! For this reason, it is important to know whether we are reaching everyone with our products and services. 
-This project will use exploration, modeling to identify the best category for Superstore in regards to sales and will provide recommendations on where to shift our company focus in order to maintain happy loyal customers while continuing to grow our customer base.
+This project will use exploratory analysis, time-series analysis and modeling to identify the best product category for Superstore to expand on. Based on sales and profitability, we will provide recommendations on where to shift our company focus in order to maintain happy loyal customers while continuing to grow our customer base.
  
 
 #### 3.INITIAL QUESTIONS:
-The focus of the project is identifying the best category in regards to products. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
+The focus of the project is identifying the best product category to expand on. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
 ##### Data-Focused Questions
-- What category base contributes the most to profit?
-- What category base contributes the most to sales?
-- How does the impact of each customer segment change over time?
-- What is the sales goals for the next 5 years?
+1. Which product category is the most profitable?
+
+2. Is there a category that stands out in terms of sales volume?
+
+3. Does profitability and sales vary by customer segment?
+
+4. How does the sales and volume and profit change over time? Are there specific times of the year where we see more profits or sales?
 
   
 #### 4. DELIVERABLES:
